@@ -1,0 +1,1797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHEIKH SAIMON AHAMED ABIR | Engineering Portfolio</title>
+  <style>
+    :root {
+  --bg: #fdf6e3;
+  --card: #fffaf2;
+  --soft: #f5e9d7;
+  --text: #2f2a24;
+  --muted: #6b6257;
+  --accent: #b88646;
+  --line: #dccbb3;
+}
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+   header {
+  position: sticky;
+  top: 0;
+  background: rgba(253, 246, 227, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  z-index: 1000;
+}
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
+
+    .logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--text);
+}
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+    .hero {
+  min-height: auto;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 40px 0;
+}
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .hero-text h1 span {
+      color: var(--accent);
+    }
+
+    .hero-text h2 {
+      font-size: 1.3rem;
+      font-weight: normal;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+  max-width: 650px;
+  margin-bottom: 24px;
+  color: var(--muted);
+}
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 2px 15px;
+      border-radius: 3px;
+      font-weight: bold;
+      transition: 0.3s;
+      border: 1px solid var(--accent);
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #0f172a;
+    }
+
+    .btn.secondary {
+      color: var(--accent);
+      background: transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .profile-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+
+   .profile-card img {
+  width: 260px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;   /* rectangular with slight smooth corners */
+  border: none;          /* removes frame */
+  margin-bottom: 18px;
+}
+
+    section {
+      padding: 80px 0;
+    }
+
+   .section-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--text);
+  border-left: 5px solid var(--accent);
+  padding-left: 14px;
+}
+
+    .about, .skills, .projects, .thesis, .publications, .contact {
+  background: #f9f1e4;
+}
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      
+    }
+
+    .card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 25px;
+  border-radius: 16px;
+}
+.skills-circles {
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.skills-note {
+  max-width: 760px;
+  margin: 0 auto 30px auto;
+  text-align: center;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.skill-wheel {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  flex: 0 0 240px;
+  z-index: 1;
+}
+
+.skill-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: none;
+}
+.simulation-ring { background: #74c69d; }
+.design-ring     { background: #74c69d; }
+.programming-ring{ background: #74c69d; }
+.web-ring        { background: #74c69d; }
+.research-ring   { background: #74c69d; }
+
+.skill-core {
+  position: absolute;
+  width: 96px;
+  height: 96px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--card);
+  border: 2px solid #2f2a24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+  z-index: 4;
+}
+
+.skill-segment {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+
+.skill-segment .label {
+  position: absolute;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  white-space: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+.skill-segment .hotspot {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 14px;
+   pointer-events: auto;
+}
+
+.skill-popup {
+  position: absolute;
+  min-width: 220px;
+  max-width: 260px;
+  background: #fffaf2;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 14px;
+  color: var(--text);
+  font-size: 0.84rem;
+  line-height: 1.5;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.25s ease;
+  z-index: 200;
+}
+.skills-legend {
+  max-width: 820px;
+  margin: 0 auto 26px auto;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 18px;
+}
+
+.skills-legend-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.skills-legend-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  overflow: hidden;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+}
+
+.skills-legend-bar div {
+  padding: 10px 8px;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.skills-legend-bar div:nth-child(1) { background: #efe3cf; }
+.skills-legend-bar div:nth-child(2) { background: #e7d2b2; }
+.skills-legend-bar div:nth-child(3) { background: #dbbb8a; }
+.skills-legend-bar div:nth-child(4) { background: #cfa96c; }
+
+.skill-level {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.skill-level-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 10px;
+}
+
+.skill-level-name {
+  font-weight: 700;
+  color: var(--text);
+}
+
+
+.skill-progress {
+  width: 100%;
+  height: 10px;
+  background: #efe6d8;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.skill-level-badge.basic {
+  background: #efe3cf;
+  color: #6a4c1f;
+  border: 1px solid #d8c09a;
+}
+
+.skill-level-badge.beginner {
+  background: #e7d2b2;
+  color: #6f4d1e;
+  border: 1px solid #cfb084;
+}
+
+.skill-level-badge.intermediate {
+  background: #dbbb8a;
+  color: #5f3f12;
+  border: 1px solid #c89d61;
+}
+
+.skill-level-badge.expert {
+  background: #cfa96c;
+  color: #4b2f08;
+  border: 1px solid #b88646;
+}
+
+.skill-progress-fill.basic {
+  background: #efe3cf;
+}
+
+.skill-progress-fill.beginner {
+  background: #e7d2b2;
+}
+
+.skill-progress-fill.intermediate {
+  background: #dbbb8a;
+}
+
+.skill-progress-fill.expert {
+  background: #cfa96c;
+}
+
+.skill-level-note {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.skill-wheel:hover {
+  z-index: 50;
+}
+
+.skill-segment:hover .skill-popup {
+  opacity: 1;
+  visibility: visible;
+}
+.skill-segment .label:hover + .hotspot + .skill-popup,
+.skill-segment .hotspot:hover + .skill-popup {
+  opacity: 1;
+  visibility: visible;
+}
+.skill-segment .hotspot.res-lit,
+.skill-segment .hotspot.res-sci,
+.skill-segment .hotspot.res-method,
+.skill-segment .hotspot.res-problem {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 14px;
+  pointer-events: auto;
+}
+
+.skill-segment .hotspot.res-lit { left: 175px; top: 175px; width: 110px; height: 44px; transform: translate(-50%, -50%); }
+.skill-segment .hotspot.res-sci { left: 65px; top: 175px; width: 100px; height: 44px; transform: translate(-50%, -50%); }
+.skill-segment .hotspot.res-method { left: 65px; top: 65px; width: 116px; height: 44px; transform: translate(-50%, -50%); }
+.skill-segment .hotspot.res-problem { left: 185px; top: 65px; width: 112px; height: 44px; transform: translate(-50%, -50%); }
+
+.popup-top {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 10px;
+}
+
+.popup-left {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 10px;
+}
+
+.popup-right {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10px;
+}
+
+.popup-bottom {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+}
+
+/* Colored rings */
+.simulation-ring,
+.design-ring,
+.programming-ring,
+.web-ring,
+.research-ring {
+  border: none;
+}
+
+/* Engineering Simulation: QBlade 90°, OPENFAST 135°, OPENFOAM 225° */
+.sim-qblade .label {
+  left: 200px;
+  top: 120px;
+  width: 72px;
+  height: 34px;
+}
+.sim-qblade .hotspot {
+  left: 212px;
+  top: 120px;
+  width: 92px;
+  height: 54px;
+  transform: translate(-50%, -50%);
+}
+
+.sim-openfast .label {
+  left: 65px;
+  top: 65px;
+  width: 82px;
+  height: 34px;
+}
+.sim-openfast .hotspot {
+  left: 65px;
+  top: 65px;
+  width: 96px;
+  height: 56px;
+  transform: translate(-50%, -50%);
+}
+
+.sim-openfoam .label {
+  left: 65px;
+  top: 175px;
+  width: 86px;
+  height: 34px;
+}
+.sim-openfoam .hotspot {
+  left: 65px;
+  top: 175px;
+  width: 100px;
+  height: 58px;
+  transform: translate(-50%, -50%);
+}
+
+/* Engineering Design: AutoCAD 90°, SolidWorks 135°, Inventor 225° */
+.des-autocad .label {
+  left: 200px;
+  top: 120px;
+  width: 74px;
+  height: 34px;
+}
+.des-autocad .hotspot {
+  left: 212px;
+  top: 120px;
+  width: 94px;
+  height: 54px;
+  transform: translate(-50%, -50%);
+}
+
+.des-solidworks .label {
+  left: 65px;
+  top: 65px;
+  width: 90px;
+  height: 34px;
+}
+.des-solidworks .hotspot {
+  left: 65px;
+  top: 65px;
+  width: 102px;
+  height: 56px;
+  transform: translate(-50%, -50%);
+}
+
+.des-inventor .label {
+  left: 65px;
+  top: 175px;
+  width: 72px;
+  height: 34px;
+}
+.des-inventor .hotspot {
+  left: 65px;
+  top: 175px;
+  width: 88px;
+  height: 58px;
+  transform: translate(-50%, -50%);
+}
+
+/* Programming positions: Python 0°, Matlab 180° */
+.pro-python .label {
+  left: 120px;
+  top: 45px;
+  width: 72px;
+  height: 34px;
+}
+.pro-python .hotspot {
+  left: 120px;
+  top: 28px;
+  width: 104px;
+  height: 64px;
+  transform: translate(-50%, -50%);
+}
+
+.pro-matlab .label {
+  left: 120px;
+  top: 200px;
+  width: 68px;
+  height: 34px;
+}
+.pro-matlab .hotspot {
+  left: 120px;
+  top: 212px;
+  width: 104px;
+  height: 54px;
+  transform: translate(-50%, -50%);
+}
+
+/* Web positions: HTML 0°, CSS 180° */
+.web-html .label {
+  left: 120px;
+  top: 45px;
+  width: 56px;
+  height: 34px;
+}
+.web-html .hotspot {
+  left: 120px;
+  top: 28px;
+  width: 104px;
+  height: 64px;
+  transform: translate(-50%, -50%);
+}
+
+.web-css .label {
+  left: 120px;
+  top: 200px;
+  width: 44px;
+  height: 34px;
+}
+.web-css .hotspot {
+  left: 120px;
+  top: 212px;
+  width: 104px;
+  height: 54px;
+  transform: translate(-50%, -50%);
+}
+/* Research Writing: 45°, 135°, 225°, 315° */
+.res-lit {
+  left: 175px;
+  top: 175px;
+  width: 104px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+}
+
+.res-sci {
+  left: 65px;
+  top: 175px;
+  width: 96px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+}
+
+.res-method {
+  left: 65px;
+  top: 65px;
+  width: 112px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+}
+
+.res-problem {
+  left: 185px;
+  top: 65px;
+  width: 108px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+}
+
+.sim-qblade .label,
+.des-autocad .label,
+.pro-python .label,
+.web-html .label,
+.skill-segment .label.res-lit {
+  color: #7d5a24;
+}
+
+.sim-openfoam .label,
+.des-inventor .label,
+.pro-matlab .label,
+.web-css .label,
+.skill-segment .label.res-problem {
+  color: #6a4c1f;
+}
+
+.sim-openfast .label,
+.des-solidworks .label,
+.skill-segment .label.res-sci,
+.skill-segment .label.res-method {
+  color: #8a642c;
+}
+.about a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.about a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .skill-wheel {
+    width: 210px;
+    height: 210px;
+    flex: 0 0 210px;
+  }
+
+  .skill-core {
+    width: 84px;
+    height: 84px;
+    font-size: 12px;
+  }
+
+  .skill-segment .label,
+  .research-label {
+    font-size: 10.5px;
+  }
+
+  .skill-popup {
+    min-width: 180px;
+    max-width: 220px;
+    font-size: 0.78rem;
+  }
+}
+
+    .skills-grid, .projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      background: var(--soft);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 999px;
+      margin: 8px 8px 0 0;
+      border: 1px solid var(--line);
+    }
+
+    .project-card h3 {
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+    .project-card p {
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+    .project-card-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 650px;
+  gap: 22px;
+  align-items: center;
+}
+
+.project-card-text {
+  min-width: 0;
+}
+
+.project-abstract-figure {
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #f3e6d2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-abstract-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-abstract-placeholder {
+  padding: 14px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+    
+    .project-card {
+  width: 100%;
+  transition: all 0.3s ease;
+    }
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+  border-color: var(--accent);
+  cursor: pointer;
+ }
+ .project-card:hover h3 {
+  color: var(--accent);
+}
+
+    .project-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+.publication-card {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  gap: 20px;
+  align-items: start;
+}    
+
+    .thesis-card h3,
+.publication-card h3 {
+  margin-bottom: 12px;
+  color: var(--text);
+}
+.abstract {
+  grid-column: 1 / -1;
+  text-align: justify;
+  margin-top: 10px;
+}
+.publication-info {
+  min-width: 0;
+}
+.project-links {
+  grid-column: 1 / -1;
+  margin-top: 5px;
+}
+
+.journal-logo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.journal-logo img {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+.repqj-logo {
+  width: 140px;
+  height: 130px;
+  object-fit: fill;
+}
+
+    .thesis-card p,
+.publication-card p {
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+    .publication-list {
+      display: grid;
+      gap: 20px;
+    }
+
+    form {
+      display: grid;
+      gap: 16px;
+      max-width: 700px;
+    }
+
+    input, textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #fffaf2;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 850px) {
+  .hero-content,
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card-content {
+    grid-template-columns: 1fr;
+  }
+
+  .project-abstract-figure {
+    max-width: 260px;
+  }
+
+  .slider-main {
+    height: calc(100vh - 110px);
+  }
+
+  .slide {
+    padding: 30px 0;
+  }
+
+  .hero-text h1 {
+    font-size: 2.3rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.slider-main {
+  height: calc(100vh - 73px);
+  overflow: hidden;
+}
+
+.slides-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 120px 0 50px 0;   /* increased top padding */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  transition: transform 0.55s ease, opacity 0.55s ease, visibility 0.55s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  z-index: 2;
+}
+
+.slide.exit-left {
+  transform: translateX(-100%);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.slide.exit-right {
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+}
+.hero-name {
+  display: inline-block;
+  position: relative;
+  font-weight: 800;
+  font-size: 2.0rem;
+  letter-spacing: 0.04em;
+  background: linear-gradient(90deg, var(--accent) 0%, #e8c792 35%, var(--accent) 70%, #f2ddba 100%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: nameShine 4.5s linear infinite, nameFloat 3.2s ease-in-out infinite;
+  filter: drop-shadow(0 6px 14px rgba(184, 134, 70, 0.18));
+}
+
+.hero-name::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  transform: scaleX(0.3);
+  transform-origin: center;
+  opacity: 0.9;
+  animation: underlinePulse 2.8s ease-in-out infinite;
+}
+
+@keyframes nameShine {
+  0% { background-position: 200% center; }
+  100% { background-position: -20% center; }
+}
+
+@keyframes nameFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes underlinePulse {
+  0%, 100% { transform: scaleX(0.35); opacity: 0.55; }
+  50% { transform: scaleX(1); opacity: 1; }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">SHEIKH SAIMON AHAMED ABIR</div>
+        <div class="nav-links">
+  <a href="#" data-slide="hero">Home</a>
+  <a href="#" data-slide="about">About</a>
+  <a href="#" data-slide="skills">Skills</a>
+  <a href="#" data-slide="projects">Projects</a>
+  <a href="#" data-slide="thesis">Thesis</a>
+  <a href="#" data-slide="publications">Publications</a>
+  <a href="#" data-slide="contact">Contact</a>
+</div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="slider-main">
+  <div class="slides-wrapper">
+    <section id="hero" class="slide hero active">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1>Hi, I am <span class="hero-name">SHEIKH SAIMON AHAMED ABIR</span></h1>
+          <h2>Engineering Student | Researcher | Engineer</h2>
+          <p>  <p style="text-align: justify;">
+            I am an Independent researcher and Engineer, passionate about design, simulation, renewable energy, programming, and solving real-world engineering problems. This portfolio presents my academic history, academic projects, technical skills, and research interests.
+          </p>
+         </p>
+        </div>
+
+        <div class="profile-card">
+          <img src="profile.jpg" alt="Profile photo" />
+          
+        
+          <p></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="slide about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-grid">
+
+      <div class="card">
+        <h3>Profile</h3>
+        <p style="text-align: justify;">
+          I am currently doing research and building experience in technical design, analysis, coding, and research. My areas of interest include renewable energy, machine learning, structural analysis, simulation, programming, and engineering optimization.
+        </p>
+        <div style="margin-top: 15px; padding: 15px; border-radius: 8px;">
+  <p style="margin: 0; font-style: italic; font-size: 1.05rem; color: var(--text);">
+    “Dream is not that which you see while sleeping, it is something that does not let you sleep.”
+  </p>
+  <p style="margin: 6px 0 0 0; text-align: right; font-style: italic; font-size: 1.1rem; color: var(--accent);">
+    — Dr. A.P.J. Abdul Kalam
+  </p>
+</div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-bottom: 20px;">Academic & Professional Journey</h3>
+
+        <div style="position: relative; padding-left: 25px; border-left: 3px solid var(--accent);">
+
+          <div style="position: relative; margin-bottom: 18px;">
+            <span style="position: absolute; left: -34px; top: 4px; width: 14px; height: 14px; background: var(--accent); border-radius: 50%; border: 3px solid var(--card);"></span>
+            <p style="margin: 0; font-weight: bold; color: var(--text);">2000–2014</p>
+            <p style="margin: 2px 0 0 0; color: var(--text);">My School and High School Period</p>
+          </div>
+
+          <div style="position: relative; margin-bottom: 18px;">
+            <span style="position: absolute; left: -34px; top: 4px; width: 14px; height: 14px; background: var(--accent); border-radius: 50%; border: 3px solid var(--card);"></span>
+            <p style="margin: 0; font-weight: bold; color: var(--text);">2015–2019</p>
+            <p style="margin: 2px 0 0 0; color: var(--text);">Studied B.Sc. in Mechanical Engineering</p>
+          </div>
+
+          <div style="position: relative; margin-bottom: 18px;">
+            <span style="position: absolute; left: -34px; top: 4px; width: 14px; height: 14px; background: var(--accent); border-radius: 50%; border: 3px solid var(--card);"></span>
+            <p style="margin: 0; font-weight: bold; color: var(--text);">2019–2020</p>
+            <p style="margin: 2px 0 0 0; color: var(--text);">Worked as Mechanical Engineer</p>
+          </div>
+
+          <div style="position: relative; margin-bottom: 18px;">
+            <span style="position: absolute; left: -34px; top: 4px; width: 14px; height: 14px; background: var(--accent); border-radius: 50%; border: 3px solid var(--card);"></span>
+            <p style="margin: 0; font-weight: bold; color: var(--text);">2021–2023</p>
+            <p style="margin: 2px 0 0 0; color: var(--text);">Studied M.Sc. in Energy and Environmental Technology</p>
+          </div>
+
+          <div style="position: relative; margin-bottom: 18px;">
+            <span style="position: absolute; left: -34px; top: 4px; width: 14px; height: 14px; background: var(--accent); border-radius: 50%; border: 3px solid var(--card);"></span>
+            <p style="margin: 0; font-weight: bold; color: var(--text);">2023–2024</p>
+            <p style="margin: 2px 0 0 0; color: var(--text);">Career break</p>
+          </div>
+
+          <div style="position: relative;">
+            <span style="position: absolute; left: -34px; top: 4px; width: 14px; height: 14px; background: var(--accent); border-radius: 50%; border: 3px solid var(--card);"></span>
+            <p style="margin: 0; font-weight: bold; color: var(--text);">2025–Present</p>
+            <p style="margin: 2px 0 0 0; color: var(--text);">Working as Service Engineer and Independent Researcher</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card" style="grid-column: 1 / -1;">
+       <h3 style="margin-bottom: 20px;">Education</h3>
+
+<div style="display: flex; gap: 30px; flex-wrap: wrap;">
+
+  <!-- Masters -->
+  <div style="flex: 1; min-width: 280px;">
+
+    <!-- University + logo -->
+   <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+      <p>
+  <strong>
+    <a href="https://www.usn.no" target="_blank">
+      University of South-Eastern Norway
+    </a>
+  </strong>
+</p>
+      <img src="usn_logo.png" style="width: 70px; height: 75px; object-fit: contain;">
+    </div>
+
+    <!-- Details -->
+    <p style="margin: 3px 0;">M.Sc. in Energy and Environmental Technology</p>
+    <p style="margin: 3px 0;">Study Timeline: 2021–2023</p>
+    <p style="margin: 3px 0;">Passing Grade: C</p>
+
+    <!-- Certificate -->
+    <div style="margin-top: 12px;">
+      <img src="masters_certificate.png" style="width: 100%; max-width: 320px; border-radius: 8px; border: 1px solid var(--line);">
+    </div>
+
+  </div>
+
+  <!-- Bachelors -->
+  <div style="flex: 1; min-width: 280px;">
+
+    <!-- University + logo -->
+    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+      <p>
+  <strong>
+    <a href="https://www.aust.edu" target="_blank">
+      Ahsanullah University of Science and Technology
+    </a>
+  </strong>
+</p>
+      <img src="aust_logo.png" style="width: 100px; height: 80px; object-fit: contain;">
+    </div>
+
+    <!-- Details -->
+    <p style="margin: 3px 0;">B.Sc. in Mechanical Engineering</p>
+    <p style="margin: 3px 0;">Study Timeline: 2015–2019</p>
+    <p style="margin: 3px 0;">Passing Grade: 3.20/4.00</p>
+
+    <!-- Certificate -->
+    <div style="margin-top: 12px;">
+      <img src="bachelors_certificate.png" style="width: 120%; max-width: 480px; border-radius: 8px; border: 1px solid var(--line);">
+    </div>
+
+  </div>
+
+</div>
+  </div>
+</section>
+
+
+
+
+    <section id="skills" class="slide skills">
+  <div class="container">
+    <h2 class="section-title">Skills</h2>
+    <p class="skills-note">
+      Hover each domain to reveal my depth of technical capability and applied expertise
+    </p>
+    <div class="skills-legend">
+  <div class="skills-legend-title">Proficiency Index</div>
+  <div class="skills-legend-bar">
+    <div>0–25% Basic</div>
+    <div>25–50% Beginner</div>
+    <div>50–75% Intermediate</div>
+    <div>75–100% Expert</div>
+  </div>
+</div>
+
+    <div class="skills-circles">
+
+      <!-- Engineering Simulation -->
+      <div class="skill-wheel">
+        <div class="skill-ring simulation-ring"></div>
+        <div class="skill-core">Engineering<br>Simulation</div>
+
+        <div class="skill-segment sim-qblade">
+          <div class="label">QBlade</div>
+          <div class="hotspot"></div>
+          <div class="skill-popup popup-top">
+            <div>QBlade: Airfoil Analysis, Blade Design, BEM Modeling, Aerodynamic Simulation, Performance Evaluation, Optimization.</div>
+
+            <div class="skill-level">
+  <div class="skill-level-head">
+    <span class="skill-level-name">Proficiency</span>
+    <span class="skill-level-badge beginner">40% — Beginner</span>
+  </div>
+  
+  
+</div>
+          </div>
+        </div>
+
+        <div class="skill-segment sim-openfast">
+          <div class="label">OpenFAST</div>
+          <div class="hotspot"></div>
+          <div class="skill-popup popup-left">
+            <div>OpenFAST: Modeling, Simulation, Parametrization, Postprocessing, Machine Learning.</div>
+
+            <div class="skill-level">
+  <div class="skill-level-head">
+    <span class="skill-level-name">Proficiency</span>
+    <span class="skill-level-badge beginner">40% — Beginner</span>
+  </div>
+ 
+</div>
+          </div>
+        </div>
+
+        <div class="skill-segment sim-openfoam">
+          <div class="label">OpenFOAM</div>
+          <div class="hotspot"></div>
+          <div class="skill-popup popup-right">
+            <div>OpenFOAM: CFD, Meshing, Turbulence Modeling, Boundary Conditions, Convergence, Visualization.</div>
+
+            <div class="skill-level">
+  <div class="skill-level-head">
+    <span class="skill-level-name">Proficiency</span>
+    <span class="skill-level-badge basic">25% — Basic</span>
+  </div>
+  
+</div>
+          
+        </div>
+      </div>
+      </div>
+
+      <!-- Engineering Design -->
+      <div class="skill-wheel">
+        <div class="skill-ring design-ring"></div>
+        <div class="skill-core">Engineering<br>Design</div>
+
+        <div class="skill-segment des-autocad">
+          <div class="label">AutoCAD</div>
+          <div class="hotspot"></div>
+          <div class="skill-popup popup-top">
+            <div>AutoCAD: Drafting, Dimensioning, Scaling, Sectioning, Layouting.</div>
+
+            <div class="skill-level">
+  <div class="skill-level-head">
+    <span class="skill-level-name">Proficiency</span>
+    <span class="skill-level-badge beginner">50% — Beginner</span>
+  </div>
+  
+</div>
+          </div>
+        </div>
+
+        <div class="skill-segment des-solidworks">
+          <div class="label">SolidWorks</div>
+          <div class="hotspot"></div>
+          <div class="skill-popup popup-left">
+            <div>SolidWorks: Part Modeling, Assembly Modeling, Sketching, Dimensioning.</div>
+
+            <div class="skill-level">
+  <div class="skill-level-head">
+    <span class="skill-level-name">Proficiency</span>
+    <span class="skill-level-badge beginner">50% — Beginner</span>
+  </div>
+  
+</div>
+          </div>
+        </div>
+
+        <div class="skill-segment des-inventor">
+          <div class="label">Inventor</div>
+          <div class="hotspot"></div>
+          <div class="skill-popup popup-right">
+           <div>Inventor: Product design, Assembly, Dimensioning.</div>
+
+           <div class="skill-level">
+  <div class="skill-level-head">
+    <span class="skill-level-name">Proficiency</span>
+    <span class="skill-level-badge intermediate">65% — Intermediate</span>
+  </div>
+  
+</div>
+        </div>
+      </div>
+    </div>
+
+ <!-- Programming Language -->
+<div class="skill-wheel">
+  <div class="skill-ring programming-ring"></div>
+  <div class="skill-core">Programming<br>Language</div>
+
+  <div class="skill-segment pro-python">
+    <div class="label">Python</div>
+    <div class="hotspot"></div>
+    <div class="skill-popup popup-top">
+      <div>Python: Programming, Scripting, Data Analysis, Numerical Computing, Machine Learning.</div>
+
+      <div class="skill-level">
+  <div class="skill-level-head">
+    <span class="skill-level-name">Proficiency</span>
+    <span class="skill-level-badge beginner">40% — Beginner</span>
+  </div>
+  
+</div>
+    </div>
+  </div>
+
+  <div class="skill-segment pro-matlab">
+    <div class="label">MATLAB</div>
+    <div class="hotspot"></div>
+    <div class="skill-popup popup-left">
+      <div>MATLAB: Programming, Numerical Computing, Data Analysis, Simulation, Signal Processing, Control Systems.</div>
+
+      <div class="skill-level">
+  <div class="skill-level-head">
+    <span class="skill-level-name">Proficiency</span>
+    <span class="skill-level-badge beginner">40% — Beginner</span>
+  </div>
+  
+</div>
+    </div>
+  </div>
+</div>
+
+      <!-- Web Design -->
+      <div class="skill-wheel">
+        <div class="skill-ring web-ring"></div>
+        <div class="skill-core">Web Design</div>
+
+        <div class="skill-segment web-html">
+          <div class="label">HTML</div>
+          <div class="hotspot"></div>
+          <div class="skill-popup popup-top">
+            <div>HTML: Markup, Structuring, Semantics, Elements, Linking, Embedding.</div>
+
+            <div class="skill-level">
+  <div class="skill-level-head">
+    <span class="skill-level-name">Proficiency</span>
+    <span class="skill-level-badge beginner">50% — Beginner</span>
+  </div>
+ 
+</div>
+          </div>
+        </div>
+
+        <div class="skill-segment web-css">
+          <div class="label">CSS</div>
+          <div class="hotspot"></div>
+          <div class="skill-popup popup-bottom">
+            <div>CSS: Styling, Layouting, Positioning, Responsiveness, Flexbox, Grid, Typography, Theming.</div>
+          <div class="skill-level">
+  <div class="skill-level-head">
+    <span class="skill-level-name">Proficiency</span>
+    <span class="skill-level-badge beginner">50% — Beginner</span>
+  </div>
+  
+</div>
+        </div>
+      </div>
+      </div>
+
+      <!-- Research -->
+      <div class="skill-wheel">
+        <div class="skill-ring research-ring"></div>
+        <div class="skill-core">Research<br>Writing</div>
+
+        <div class="skill-segment">
+  <div class="label res-lit">Literature Review</div>
+  <div class="hotspot res-lit"></div>
+  <div class="skill-popup popup-right">
+    <div>Literature Review: Source analysis, synthesis of prior work, gap identification, thematic review.</div>
+    <div class="skill-level">
+      <div class="skill-level-head">
+        <span class="skill-level-name">Proficiency</span>
+        <span class="skill-level-badge expert">90% — Expert</span>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+        <div class="skill-segment">
+  <div class="label res-sci">Scientific Writing</div>
+  <div class="hotspot res-sci"></div>
+  <div class="skill-popup popup-left">
+    <div>Scientific Writing: Academic writing, manuscript development, technical explanation, result interpretation, structured discussion.</div>
+    <div class="skill-level">
+      <div class="skill-level-head">
+        <span class="skill-level-name">Proficiency</span>
+        <span class="skill-level-badge expert">90% — Expert</span>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+       <div class="skill-segment">
+  <div class="label res-method">Methodology Design</div>
+  <div class="hotspot res-method"></div>
+  <div class="skill-popup popup-top">
+    <div>Methodology Design: Research framework development, workflow planning, method selection, validation strategy, stepwise study design.</div>
+    <div class="skill-level">
+      <div class="skill-level-head">
+        <span class="skill-level-name">Proficiency</span>
+        <span class="skill-level-badge intermediate">75% — Intermediate</span>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+        <div class="skill-segment">
+  <div class="label res-problem">Problem Formulation</div>
+  <div class="hotspot res-problem"></div>
+  <div class="skill-popup popup-right">
+    <div>Problem Formulation: Research problem definition, objective framing, scope setting, variable identification, hypothesis development.</div>
+    <div class="skill-level">
+      <div class="skill-level-head">
+        <span class="skill-level-name">Proficiency</span>
+        <span class="skill-level-badge intermediate">75% — Intermediate</span>
+      </div>
+    
+    </div>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <section id="projects" class="slide projects">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+          <a href="project1.html" target="_blank" style="text-decoration: none;">
+  <div class="card project-card">
+
+    <div class="project-card-content">
+
+      <!-- LEFT: TEXT -->
+      <div class="project-card-text">
+        <h3>Project 1: Energy Management Systems Review (Masters Project 2022)</h3>
+        <p style="text-align: justify;">
+          This project reviews Building Energy Management Systems (BEMS), focusing on how smart technologies such as sensors, IoT, and automated control can monitor and optimize energy use in buildings to reduce cost and environmental impact. It analyzes existing research, international standards like ISO 50001, and real-world case studies, showing that such systems can achieve roughly 10–20% energy savings. The work also compares various commercial and open-source EMS platforms, highlighting their capabilities in data monitoring, forecasting, and control. Overall, it provides a clear understanding of how modern energy management systems improve building efficiency and support sustainable energy use.
+        </p>
+      </div>
+
+      <!-- RIGHT: IMAGE -->
+      <div class="project-abstract-figure">
+        <img src="project1_abstract.jpg" alt="Graphical abstract"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="project-abstract-placeholder" style="display:none;">
+          Add project1_abstract.jpg
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</a>
+
+          <a href="project2.html" target="_blank" style="text-decoration: none;">
+  <div class="card project-card">
+
+    <div class="project-card-content">
+
+      <div class="project-card-text">
+        <h3>Project 2: Android Control Robotic Arm (Bachelors Project 2018)</h3>
+        <p style="text-align: justify;">
+          This project focuses on the design and development of an Android-controlled robotic arm with functionality similar to a human arm. The work involves mechanical design, structural construction, and integration of electronic components such as stepper motors, motor drivers, Arduino Mega, and a Bluetooth module for wireless control. The system was intended to be operated through an Android application, enabling remote control of multiple joints including base, arms, and gripper. While the structure was successfully designed and built, and basic motor operations were achieved, full Android control and object gripping were not fully realized due to limitations in motor torque, electronics, and fabrication constraints. The project highlights practical challenges in mechanical design, electronics integration, and control implementation, while proposing improvements such as stronger motors, better control hardware, and 3D-printed structures for enhanced performance.
+        </p>
+      </div>
+
+      <div class="project-abstract-figure">
+        <img src="project2_abstract.jpg" alt="Graphical abstract for robotic arm"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="project-abstract-placeholder" style="display:none;">
+          Add project2_abstract.jpg
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</a>
+
+         <a href="project3.html" target="_blank" style="text-decoration: none;">
+  <div class="card project-card">
+
+    <div class="project-card-content">
+
+      <div class="project-card-text">
+        <h3>Project 3: Baymax, An Automated Restaurant Waiter Bot (Bachelors Project 2018)</h3>
+        <p style="text-align: justify;">
+          This project presents the design and development of “Baymax,” an automated restaurant waiter robot designed to deliver food from the kitchen to specific tables using a line-following mechanism. The system integrates mechanical construction with electronic components such as an Arduino Uno, DC motors, IR sensors, and a Bluetooth module to enable navigation and control. The robot successfully performs autonomous food delivery and return operations along a predefined path, demonstrating practical application of robotics in service automation. However, full wireless ordering and Bluetooth-based control were not fully achieved, highlighting limitations in communication and system integration while providing a foundation for future improvements.
+        </p>
+      </div>
+
+      <div class="project-abstract-figure">
+        <img src="project3_abstract.jpg" alt="Graphical abstract for waiter robot"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="project-abstract-placeholder" style="display:none;">
+          Add project3_abstract.jpg
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</a>
+<a href="project4.html" target="_blank" style="text-decoration: none;">
+  <div class="card project-card">
+
+    <div class="project-card-content">
+
+      <div class="project-card-text">
+        <h3>Project 4: Sandstorm Assault Helicopter (Bachelors Project 2017)</h3>
+        <p style="text-align: justify;">
+          This was my first design submitted for Mechanical Engineering Drawing(CAD) course project. This aircraft was designed based on a video game called War Commander.
+        </p>
+      </div>
+
+      <div class="project-abstract-figure">
+        <img src="project4_abstract.jpg" alt="Graphical abstract for helicopter"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="project-abstract-placeholder" style="display:none;">
+          Add project4_abstract.jpg
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</a>
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="thesis" class="slide thesis">
+  <div class="container">
+    <h2 class="section-title">Thesis</h2>
+
+    <div class="projects-grid">
+
+      <a href="thesis1.html" target="_blank" style="text-decoration: none;">
+        <div class="card project-card">
+          <div class="project-card-content">
+
+            <div class="project-card-text">
+              <h3>Development of Circular Economy Routes for Refractory Waste (Masters Thesis 2023)</h3>
+              <p style="text-align: justify;">
+                This thesis focuses on developing sustainable recycling pathways for refractory waste generated from high-temperature industrial processes such as steel and cement production. The motivation stems from the environmental and economic impact of current practices, where large volumes of refractory waste, especially fine particles, are discarded in landfills, contributing to pollution, greenhouse gas emissions, and loss of valuable materials. The core problem addressed is the lack of efficient and practical methods to classify and recover these fine waste particles for reuse. To tackle this, the study investigates particle size distribution and evaluates the performance of a cross-flow air classifier under different operating conditions, aiming to enable effective material separation and support the transition toward a circular economy in the refractory industry.
+              </p>
+            </div>
+
+            <div class="project-abstract-figure">
+              <img src="thesis1.jpg" alt="Graphical abstract for masters thesis"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="project-abstract-placeholder" style="display:none;">
+                Add thesis1.jpg
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </a>
+     
+
+    <a href="thesis2.html" target="_blank" style="text-decoration: none;">
+        <div class="card project-card">
+          <div class="project-card-content">
+
+            <div class="project-card-text">
+              <h3>Design of A 3kW Horizontal Axis Wind Turbine for Prospecctive Locations of Bangladesh (Bachelors Thesis 2019)</h3>
+              <p style="text-align: justify;">
+                This thesis focuses on the design and performance evaluation of a 3 kW horizontal axis wind turbine (HAWT) for potential locations in Bangladesh. The motivation is to address the country’s growing energy demand and dependence on fossil fuels by exploring wind as a sustainable alternative. The study tackles two core problems: identifying suitable wind resource locations and developing an efficient small-scale turbine design. It combines wind resource assessment using Weibull distribution with aerodynamic blade design and simulation to determine energy generation potential.
+              </p>
+            </div>
+
+            <div class="project-abstract-figure">
+              <img src="thesis2.jpg" alt="Graphical abstract for bachelors thesis"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="project-abstract-placeholder" style="display:none;">
+                Add thesis2.jpg
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+    <section id="publications" class="slide publications">
+  <div class="container">
+    <h2 class="section-title">Publications</h2>
+    <div class="publication-list">
+
+      <!-- Paper 1 -->
+      <div class="card publication-card">
+
+        <div class="publication-info">
+          <h3>Strategic Roadmap for Offshore Wind Energy Development in Bangladesh: A Review</h3>
+          <p><strong>Authors:</strong> Sheikh Saimon Ahamed Abir, Md Refaiath Hossain</p>
+          <p><strong>Journal:</strong> Oxford Open Energy</p>
+          <p><strong>Publisher:</strong> Oxford University Press</p>
+          <p><strong>Journal Location:</strong> United Kingdom</p>
+          <p><strong>Year:</strong> 2026</p>
+          <p><strong>Status:</strong> Published</p>
+
+          
+        </div>
+
+        <div class="journal-logo">
+          <img src="oxford_logo.jpg" alt="Oxford Logo">
+        </div>
+
+        <p class="abstract">
+          Abstract: Bangladesh is facing a growing demand for sustainable and reliable energy sources due to challenges posed by rapid industrialization and a high dependency on imported fossil fuels. Climate change is another major issue. Offshore wind energy presents a promising opportunity to diversify Bangladesh’s energy mix and provide a cleaner source of energy. This review explores the potential of offshore wind energy, wind resource availability at various sites, technological adaptations, and offshore policy frameworks for Bangladesh. The study identifies optimal sites for offshore wind development in Bangladesh, including Cox’s Bazar, Sandwip, and the Bay of Bengal. It also identifies key challenges, including the absence of a dedicated offshore wind policy, cyclone resilience, and the effects of high humidity on offshore wind turbines. The paper draws lessons from pioneer countries such as China and the UK to propose a phased roadmap for Bangladesh. Some strategic recommendations are highlighted, such as establishing a national offshore wind authority, adopting cyclone-resistant turbine designs, and implementing financial incentives to attract investment. By addressing technical, economic, and regulatory barriers, Bangladesh can harness enough offshore wind energy to achieve its renewable energy targets by 2041.
+        </p>
+        <div class="project-links">
+            <p><a href="https://doi.org/10.1093/ooenergy/oiaf015" target="_blank">Paper Link</a></p>
+          </div>
+
+      </div>
+
+      <!-- Paper 2 -->
+      <div class="card publication-card">
+
+        <div class="publication-info">
+          <h3>Machine-Learning-Accelerated Design Exploration of Floating Offshore Wind Turbine Mooring Systems Using OpenFAST-Based Parametric Simulations</h3>
+          <p><strong>Authors:</strong> Sheikh Saimon Ahamed Abir, Md Refaiath Hossain, Sohanur Rahman, Tanvir Anam Tipu</p>
+          <p><strong>Journal:</strong> Results in Engineering</p>
+          <p><strong>Publisher:</strong> Elsevier</p>
+          <p><strong>Journal Location:</strong> Netherlands</p>
+          <p><strong>Year:</strong> 2026</p>
+          <p><strong>Status:</strong> Under Peer Review</p>
+
+          
+        </div>
+
+        <div class="journal-logo">
+          <img src="elsevier_logo.jpg" alt="Elsevier Logo">
+        </div>
+
+        <p class="abstract">
+          Abstract: This study investigates the dynamic response and mooring line tension behavior of a floating offshore wind turbine under representative Bay of Bengal environmental conditions relevant to Bangladesh offshore waters. A hybrid framework combining high-fidelity OpenFAST simulations with machine learning based surrogate modelling was developed to rapidly predict key response metrics of a floating offshore wind turbine mooring system. A parametric dataset consisting of 324 OpenFAST simulations was generated using NREL5-MW turbine coupled with OC4-DeepCwind semi-submersible platform. The simulations considered variations in wind and wave parameters, mooring line length factor, pretension factor, and axial stiffness factor. Random Forest regression models were trained to predict four critical response quantities. Model robustness was evaluated using five-fold cross-validation, yielding coefficients of determination greater than 0.98 for all response variables. The surrogate models were further validated using unseen 36 independent OpenFAST simulations. The validation results demonstrated strong agreement between predicted and simulated responses, with surge prediction errors below approximately 3.5m and mooring tension errors within N. Feature importance analysis revealed that mooring line length and pretension are the dominant parameters governing platform response and mooring loads. The trained surrogate model was also used to evaluate 2,883 candidate mooring configurations, from which 2,598 globally safe designs were identified under the adopted response limits. The results demonstrate that the proposed framework enables rapid prediction of floating wind turbine responses under Bay of Bengal metocean conditions and provides a practical tool for preliminary mooring design and feasibility assessment of floating offshore wind systems in Bangladesh offshore regions.
+        </p>
+        <div class="project-links">
+            <p><a href="https://dx.doi.org/10.2139/ssrn.6442479" target="_blank">Paper Link</a></p>
+          </div>
+
+      </div>
+
+      <!-- Paper 3 -->
+      <div class="card publication-card">
+
+        <div class="publication-info">
+          <h3>High Hub-Height Wind Resource Assessment for Coastal Bangladesh: Energy-Based Validation and Turbine Height Optimization Under Cost Scaling</h3>
+          <p><strong>Authors:</strong> Sheikh Saimon Ahamed Abir, Md Refaiath Hossain, Sohanur Rahman</p>
+          <p><strong>Journal:</strong> Renewable Energy and Power Quality Journal</p>
+          <p><strong>Publisher:</strong> Cultech Publishing</p>
+          <p><strong>Journal Location:</strong> Malaysia</p>
+          <p><strong>Year:</strong> 2026</p>
+          <p><strong>Status:</strong> Under Peer Review</p>
+        </div>
+
+        <div class="journal-logo">
+          <img src="repqj_logo.png" alt="Journal Logo" class="repqj-logo">
+        </div>
+
+        <p class="abstract">
+          Abstract: This study evaluates high hub-height wind resource potential (80–200 m) in two coastal regions of Bangladesh (Kuakata and Sandwip) to identify energy-efficient and cost-informed turbine height ranges under modern wind configurations. WRF-based wind data from the NLR Wind Resource Data Base (WRDB) for the years 2011–2021 were analysed using five Weibull parameter estimation methods. Model performance was assessed using both statistical (RMSE) and energy-based (RPDE) validation metrics. Results show that wind power density increases consistently with hub height, reaching 161.85 W/m² at Kuakata and 164.82 W/m² at Sandwip at 200 m. The Energy Pattern Factor Method produced the lowest RPDE values (<0.6%) across all heights, indicating superior accuracy in energy estimation. However, the rate of energy gain decreases with height when compared to the corresponding increase in structural cost. A normalized tower cost-scaling framework was integrated with wind resource results to evaluate marginal energy–cost efficiency. Sensitivity analysis (α = 1.5–2.0) identified optimal hub-height ranges of 100–140 m for Kuakata and 120–180 m for Sandwip. These ranges provide the most efficient balance between energy gain and cost escalation. Within these optimal ranges, estimated annual energy production is approximately 6.1–6.6 GWh per turbine for Kuakata and 6.1–7.0 GWh per turbine for Sandwip, corresponding to capacity factors of approximately 14.6%–16.7%. The analysis is based on mesoscale data and simplified cost modelling and does not account for site-specific measurements or full project economics. The proposed framework provides screening-level decision support for wind energy planning in coastal Bangladesh and offers a transferable methodology for hub-height optimization in emerging wind markets.
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <section id="contact" class="slide contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="card">
+          <p>Email: sheikhsaimonabir@gmail.com</p>
+          <p>LinkedIn: linkedin.com/in/sheikh-abir</p>
+           <div class="btn-group">
+            
+            <a class="btn secondary" href="resume.pdf" target="_blank">My CV</a>
+          </div>
+          <br />
+          
+        </div>
+      </div>
+    </section>
+    </div>
+</main>
+
+  <!--
+<footer>
+  <div class="container">
+    <p>© 2026 SHEIKH SAIMON AHAMED ABIR. All rights reserved.</p>
+  </div>
+</footer>
+-->
+
+  <script>
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const slides = document.querySelectorAll('.slide');
+  let currentSlide = document.querySelector('.slide.active');
+
+  function resetSlides() {
+    slides.forEach(slide => {
+      slide.classList.remove('active', 'exit-left', 'exit-right');
+      slide.style.opacity = '';
+      slide.style.visibility = '';
+      slide.style.transform = '';
+      slide.style.zIndex = '';
+    });
+  }
+
+  function showSlide(targetId) {
+    const targetSlide = document.getElementById(targetId);
+    if (!targetSlide || targetSlide === currentSlide) return;
+
+    const currentIndex = Array.from(slides).indexOf(currentSlide);
+    const targetIndex = Array.from(slides).indexOf(targetSlide);
+
+    currentSlide.classList.remove('exit-left', 'exit-right');
+    targetSlide.classList.remove('exit-left', 'exit-right');
+
+    currentSlide.style.zIndex = '1';
+    targetSlide.style.zIndex = '2';
+    targetSlide.style.visibility = 'visible';
+    targetSlide.style.opacity = '1';
+    targetSlide.style.transform = targetIndex > currentIndex ? 'translateX(100%)' : 'translateX(-100%)';
+
+    requestAnimationFrame(() => {
+      currentSlide.classList.remove('active');
+      currentSlide.classList.add(targetIndex > currentIndex ? 'exit-left' : 'exit-right');
+
+      targetSlide.classList.add('active');
+      targetSlide.style.transform = 'translateX(0)';
+    });
+
+    setTimeout(() => {
+      slides.forEach(slide => {
+        if (slide !== targetSlide) {
+          slide.classList.remove('active', 'exit-left', 'exit-right');
+          slide.style.opacity = '0';
+          slide.style.visibility = 'hidden';
+          slide.style.transform = 'translateX(100%)';
+          slide.style.zIndex = '1';
+        }
+      });
+
+      targetSlide.style.opacity = '1';
+      targetSlide.style.visibility = 'visible';
+      targetSlide.style.zIndex = '2';
+    }, 600);
+
+    currentSlide = targetSlide;
+  }
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      showSlide(this.dataset.slide);
+    });
+  });
+
+  window.addEventListener('load', () => {
+    resetSlides();
+    const homeSlide = document.getElementById('hero');
+    homeSlide.classList.add('active');
+    homeSlide.style.opacity = '1';
+    homeSlide.style.visibility = 'visible';
+    homeSlide.style.transform = 'translateX(0)';
+    homeSlide.style.zIndex = '2';
+    currentSlide = homeSlide;
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Android Control Robotic Arm</title>
+</head>
+<body style="font-family: Arial; padding: 40px; max-width: 900px; margin: auto;">
+
+<h1>Android Control Robotic Arm</h1>
+
+<h3>Overview</h3>
+<p style="text-align: justify;">
+This project presents the design and development of an Android-controlled robotic arm intended to replicate the basic movements of a human arm through programmable mechanical and electronic systems. The work integrates mechanical structure design with embedded systems, combining stepper motors, motor drivers, an Arduino Mega controller, and a Bluetooth module to enable wireless communication with an Android application. The robotic arm is designed with multiple degrees of freedom, including base rotation, arm movement, and a gripper mechanism, allowing it to perform basic manipulation tasks.
+
+The methodology involves conceptual design, material selection, structural fabrication using acrylic components, and assembly of electronic circuits for motor control. The system architecture focuses on coordinating multiple motors to achieve controlled motion, while the Android interface is intended to provide user-friendly remote operation. Throughout the project, key engineering challenges such as load distribution, motor torque limitations, circuit stability, and fabrication constraints are addressed.
+
+Although the physical structure and electronic integration were successfully implemented, full system functionality particularly precise gripping and complete Android-based control was limited due to hardware and control constraints. The project demonstrates the practical complexities of robotics development and provides a foundation for future improvements in actuation, control systems, and structural design.<p>
+<h3>Project Objectives</h3>
+
+<div style="display: flex; gap: 20px;">
+
+  <div style="flex: 1;">
+    <h4>Successful Objectives:</h4>
+    <ul style="text-align: justify;">
+      <li>Designed structure</li>
+      <li>Constructed the structure</li>
+      <li>Installed electronics</li>
+    </ul>
+  </div>
+
+  <div style="flex: 1;">
+    <h4>Unsuccessful Objectives:</h4>
+    <ul style="text-align: justify;">
+      <li>Gripping object with arm</li>
+      <li>Android control</li>
+    </ul>
+  </div>
+
+</div>
+
+
+</p>
+
+<h3>Supervisor</h3>
+<p>
+  <strong>
+    <a href="https://www.aust.edu/mpe/faculty_member/dr_fazle_rabbi" target="_blank">
+      Dr. Fazle Rabbi
+    </a>
+  </strong>
+</p>
+
+<h3>Project Partner</h3>
+<div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+ 
+  <p style="margin: 0;">
+    None
+  </p>
+</div>
+
+<h3>Methodology</h3>
+<p style="text-align: justify;">
+The methodology of this project follows a systematic design–build–test approach. The process begins with the conceptual design of the robotic arm, where the overall structure, degrees of freedom, and motion requirements are defined. Based on this, a detailed mechanical design is developed using 2D layouts, and suitable materials such as acrylic sheets and aluminium components are selected to construct the arm structure.
+
+The next stage involves component selection and system integration. Stepper motors are chosen for joint actuation, along with motor drivers, an Arduino Mega microcontroller, and an HC-05 Bluetooth module for wireless communication. A circuit is designed and implemented to control multiple motors, ensuring coordinated movement of the base, arm segments, and gripper. The electronic components are assembled on a breadboard and later integrated into the full system.
+
+Following hardware assembly, programming and control development are carried out. The Arduino is programmed to drive the motors and execute movement commands, while initial efforts are made to establish communication between the robotic arm and an Android application via Bluetooth. Individual motor testing is performed first, followed by attempts to synchronize multi-axis motion.
+
+Finally, the system is tested and evaluated. The structure, motor performance, and control functionality are assessed to determine whether project objectives are met. Observations from testing are used to identify limitations related to torque, control accuracy, and system stability, forming the basis for further improvements.
+</p>
+
+<h3>Tools Used</h3>
+<p>
+ <li> SolidWorks</li>
+<li>Arduino Mega microcontroller</li>
+<li>NEMA-17 and 28BYJ-48 stepper motors</li>
+<li>L293DR motor driver</li>
+<li>Adafruit motor shield</li>
+<li>HC-05 Bluetooth module</li>
+<li>Breadboard and soldering tools</li>
+<li>Acrylic materials and aluminium components</li>
+<li>Laser cutting tools</li>
+<li>Arduino IDE (programming software)</li>
+<li>Android application (for control interface)</li>
+</p>
+
+<h3>Results</h3>
+<p>
+<li>Successfully designed and constructed the robotic arm structure using acrylic materials</li>
+<li>Integrated electronic components including Arduino Mega, stepper motors, motor drivers, and Bluetooth module</li>
+<li>Achieved basic motor functionality with individual joint movement and control</li>
+<li>Unable to fully implement Android-based control due to communication and control limitations</li>
+<li>Gripper mechanism was not able to effectively grasp objects due to insufficient motor torque</li>
+<li>Identified key limitations in motor performance, electronics reliability, and fabrication constraints, guiding future improvements</li>
+</p>
+
+<h3>Figures</h3>
+<h3>Design Phase</h3>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 90px; margin-bottom: 40px;">
+  <img src="design1.png" style="width:120%; border-radius:10px;">
+  <img src="design2.png" style="width:120%; border-radius:10px;">
+  <img src="design3.png" style="width:120%; border-radius:10px;">
+  <img src="design4.png" style="width:120%; border-radius:10px;">
+</div>
+
+
+<h3>Construction Phase</h3>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 70px;">
+  <img src="construction1.jpg" style="width:110%; border-radius:10px;">
+  <img src="construction2.jpg" style="width:110%; border-radius:10px;">
+  
+</div>
+
+<h3>Links</h3>
+<p>
+<a href="https://github.com/sheikhsaimonabir-prog/Bachelor-Project-1-3rd-year.git">Project Presentation File</a>
+</p>
+
+</body>
+</html>
